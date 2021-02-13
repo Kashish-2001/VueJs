@@ -1,0 +1,28 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "ShareHere",
+      "details": "Make ShareHere !!",
+      "complete": false
+    },
+    {
+      "id": 2,
+      "title": "Business card maker",
+      "details": "Complete it !!",
+      "complete": false
+    },
+    {
+      "id": 3,
+      "title": "Stack questions",
+      "details": "6 Questions left !!",
+      "complete": false
+    },
+    {
+      "id": 4,
+      "title": "something",
+      "details": "anything!! Okay.\n",
+      "complete": true
+    }
+  ]
+}
