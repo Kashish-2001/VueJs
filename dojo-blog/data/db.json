@@ -1,0 +1,33 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Welcome to new blog",
+      "detail": "kuch kuch kuch kuch kuch kuch kuch kuch kuch kuch kuch kuch",
+      "tags": [
+        "webdev",
+        "coding",
+        "news"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Top css tips",
+      "detail": "Flex box",
+      "tags": [
+        "css",
+        "webdev",
+        "coding"
+      ]
+    },
+    {
+      "title": "The Dojo-Blog",
+      "detail": "Its a blog post on DOJO BLOG!",
+      "tags": [
+        "kuch",
+        "blog"
+      ],
+      "id": 3
+    }
+  ]
+}
