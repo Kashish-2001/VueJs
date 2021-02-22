@@ -4,7 +4,7 @@
     <label> Title: </label>
     <input v-model="title" type="text" required>
     <label>Content: </label>
-    <textarea v-model="detail" required></textarea>
+    <textarea v-model="details" required></textarea>
     <label>Tags ( hit enter to add a tag ):</label>
     <input
         @keydown.enter.prevent="addtag"
@@ -22,11 +22,12 @@
 <script>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { projectFirestore, timestamp } from "@/firebase/config";
 
 export default {
   setup() {
     const title = ref(null)
-    const detail = ref(null)
+    const details = ref(null)
     const tag = ref(null)
     const tags = ref([])
 
@@ -43,18 +44,20 @@ export default {
     const handleSubmit = async () => {
       const post = {
         title: title.value,
-        detail: detail.value,
-        tags: tags.value
+        details: details.value,
+        tags: tags.value,
+        createdAt: timestamp()
       }
-      await fetch('http://localhost:3000/posts',{
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(post)
-          })
+      // await fetch('http://localhost:3000/posts',{
+      //           method: 'POST',
+      //           headers: { 'Content-Type': 'application/json' },
+      //           body: JSON.stringify(post)
+      //     })
+      const res = await projectFirestore.collection('posts').add(post)
 
       router.push({ name: 'Home' })
     }
-    return { title, detail, tag, tags, addtag, handleSubmit }
+    return { title, details, tag, tags, addtag, handleSubmit }
   },
 }
 </script>
@@ -91,7 +94,8 @@ export default {
     color: white;
     border: none;
     padding: 8px 16px;
-    font-size: 18px
+    font-size: 18px;
+    cursor: pointer;
   }
   .pill {
     display: inline-block;

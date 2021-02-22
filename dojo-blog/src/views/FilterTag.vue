@@ -2,7 +2,7 @@
 
   <div class="tag">
     <div v-if="error">{{ error }}</div>
-    <div v-if="posts.length" class="layout" >
+    <div v-if="posts.length" class="layout">
     <PostList :posts="filteredposts" />
     <TagBar :posts="posts"/>
     </div>
@@ -42,10 +42,15 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   .tag {
     max-width: 1200px;
     margin: 0 auto;
     padding: 10px;
   }
+.layout{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 100px;
+}
 </style>

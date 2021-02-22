@@ -12,6 +12,8 @@
       </div>
 </template>
 
+
+
 <script>
 import { computed} from 'vue'
 
@@ -19,9 +21,9 @@ import { computed} from 'vue'
         name: 'PostDetail',
         props: ['post'],
         setup(props){
-          const snippet = computed(() =>{
-            return props.post.detail.substring(0,50) + '...'
-          })
+        const snippet = computed(() => {
+              return props.post.details.substring(0, 10) + '...'
+            })
 
         return { snippet }
         },
