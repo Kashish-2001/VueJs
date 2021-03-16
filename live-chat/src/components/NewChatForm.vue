@@ -2,7 +2,7 @@
   <form @submit.prevent="handleSubmit" >
 
     <textarea @keydown.enter.prevent="handleSubmit" v-model="message" placeholder="Type your message here and press enter to send"></textarea>
-<!--    <button type="submit">Send</button>-->
+   <button type="submit">Send</button>
   </form>
   <div class="error">{{ error }}</div>
 </template>
