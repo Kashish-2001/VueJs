@@ -1,3 +1,3 @@
 # VueJs
 
-Just some of my initial vueJs practice projects.
+Just some of my initial Vuejs practice projects.
